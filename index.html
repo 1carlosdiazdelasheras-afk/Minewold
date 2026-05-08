@@ -1,10 +1,15 @@
+# Minewold - Web Profesional estilo Hypixel
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Minewold</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Minewold Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,189 +19,611 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
-  font-family:Arial, sans-serif;
-  background:#0f0f0f;
+  font-family:'Montserrat',sans-serif;
+  background:#090b14;
+  color:white;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+  radial-gradient(circle at top,#7d3cff33,transparent 40%),
+  radial-gradient(circle at bottom,#00c3ff22,transparent 40%),
+  linear-gradient(to bottom,#090b14,#111827);
+  z-index:-2;
+}
+
+/* NAVBAR */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:999;
+  backdrop-filter:blur(14px);
+  background:rgba(7,10,20,0.75);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.navbar{
+  width:90%;
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo img{
+  width:70px;
+  filter:drop-shadow(0 0 12px #00c3ff66);
+}
+
+.logo h1{
+  font-size:1.6rem;
+  font-weight:800;
+  background:linear-gradient(to right,#ffffff,#b0f0ff,#d99cff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+nav{
+  display:flex;
+  gap:35px;
+}
+
+nav a{
+  color:#dbe4ff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0%;
+  height:2px;
+  background:#00c3ff;
+  transition:0.3s;
+}
+
+nav a:hover{
   color:white;
 }
 
-/* MENU */
-header{
-  background:#111;
-  padding:20px;
+nav a:hover::after{
+  width:100%;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
   display:flex;
   justify-content:center;
-  gap:25px;
-  border-bottom:2px solid #00bfff;
-  position:sticky;
-  top:0;
+  align-items:center;
+  text-align:center;
+  padding:140px 20px 100px;
+  position:relative;
 }
 
-header a{
-  color:white;
+.hero-content{
+  max-width:900px;
+}
+
+.hero img{
+  width:320px;
+  margin-bottom:20px;
+  animation:float 4s ease-in-out infinite;
+  filter:drop-shadow(0 0 25px rgba(163,78,255,0.5));
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0px);}
+  50%{transform:translateY(-15px);}
+}
+
+.hero h2{
+  font-size:4rem;
+  font-weight:800;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.hero h2 span{
+  background:linear-gradient(to right,#00c3ff,#d24fff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  color:#cfd8ff;
+  font-size:1.15rem;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 32px;
+  border-radius:14px;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:700;
+  transition:0.3s;
+  display:inline-block;
 }
 
-header a:hover{
-  color:#00bfff;
+.btn-primary{
+  background:linear-gradient(135deg,#00c3ff,#7d3cff);
+  color:white;
+  box-shadow:0 10px 30px rgba(0,195,255,0.35);
 }
 
-/* SECCIONES */
-section{
-  display:none;
-  padding:80px 20px;
+.btn-primary:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+.btn-secondary{
+  border:1px solid rgba(255,255,255,0.15);
+  color:white;
+  background:rgba(255,255,255,0.05);
+}
+
+.btn-secondary:hover{
+  background:rgba(255,255,255,0.12);
+}
+
+/* STATS */
+
+.stats{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+  margin-top:-70px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.stat-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:22px;
+  padding:35px;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.stat-card:hover{
+  transform:translateY(-8px);
+  border-color:#00c3ff55;
+}
+
+.stat-card h3{
+  font-size:2.5rem;
+  margin-bottom:10px;
+  color:#00c3ff;
+}
+
+.stat-card p{
+  color:#c8d4ff;
+}
+
+/* SECTION */
+
+.section{
+  padding:120px 20px;
+}
+
+.container{
+  width:90%;
+  max-width:1300px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title h2{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+.section-title p{
+  color:#b7c4ef;
+}
+
+/* MODOS */
+
+.modes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.mode-card{
+  background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:24px;
+  padding:40px;
+  transition:0.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.mode-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(to right,#00c3ff,#d24fff);
+}
+
+.mode-card:hover{
+  transform:translateY(-10px);
+  border-color:#7d3cff66;
+}
+
+.mode-card h3{
+  font-size:1.8rem;
+  margin-bottom:18px;
+}
+
+.mode-card p{
+  color:#cfd8ff;
+  line-height:1.7;
+}
+
+/* REGLAS */
+
+.rules-box{
   max-width:900px;
   margin:auto;
 }
 
-section.activa{
-  display:block;
+.rules-box details{
+  background:rgba(255,255,255,0.05);
+  border-radius:18px;
+  margin-bottom:20px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
 }
 
-/* TITULOS */
-h1,h2{
-  color:#00bfff;
+.rules-box summary{
+  padding:22px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:1.1rem;
+}
+
+.rules-content{
+  padding:0 22px 22px;
+  color:#d4ddff;
+  line-height:2;
+}
+
+/* CTA */
+
+.cta{
+  text-align:center;
+  background:linear-gradient(135deg,#00c3ff22,#a64dff22);
+  border:1px solid rgba(255,255,255,0.08);
+  width:90%;
+  max-width:1200px;
+  margin:0 auto 120px;
+  border-radius:30px;
+  padding:70px 30px;
+}
+
+.cta h2{
+  font-size:3rem;
   margin-bottom:20px;
 }
 
-/* BOTON */
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
-  background:#00bfff;
-  color:white;
-  text-decoration:none;
-  border-radius:8px;
+.cta p{
+  color:#d2ddff;
+  margin-bottom:35px;
 }
 
-/* REGLAS */
-details{
-  background:#1b1b1b;
-  margin-top:15px;
-  border-radius:10px;
-  overflow:hidden;
+/* FOOTER */
+
+footer{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:40px 20px;
+  text-align:center;
+  color:#aab7df;
+  background:#070a12;
 }
 
-summary{
-  padding:15px;
-  cursor:pointer;
-  font-weight:bold;
-  color:#00bfff;
-}
+/* RESPONSIVE */
 
-.contenido{
-  padding:15px;
-  border-top:1px solid #333;
-}
+@media(max-width:900px){
 
-.sub{
-  background:#222;
-  margin-top:10px;
-  border-radius:8px;
-  padding:10px;
+  .navbar{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+  }
+
+  .hero h2{
+    font-size:2.8rem;
+  }
+
+  .hero img{
+    width:240px;
+  }
+
+  .section-title h2,
+  .cta h2{
+    font-size:2.2rem;
+  }
+
 }
 
 </style>
 </head>
-
 <body>
 
-<!-- MENU (ARREGLADO) -->
 <header>
-  <a href="javascript:void(0)" onclick="ir('inicio')">Inicio</a>
-  <a href="javascript:void(0)" onclick="ir('tienda')">Tienda</a>
-  <a href="javascript:void(0)" onclick="ir('reglas')">Reglas</a>
-  <a href="javascript:void(0)" onclick="ir('discord')">Discord</a>
-  <a href="javascript:void(0)" onclick="ir('soporte')">Soporte</a>
+  <div class="navbar">
+
+    <div class="logo">
+      <!-- CAMBIA logo.png POR TU LOGO -->
+      <img src="logo.png" alt="Minewold Logo">
+      <h1>MINEWOLD</h1>
+    </div>
+
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#modos">Modos</a>
+      <a href="#reglas">Reglas</a>
+      <a href="#discord">Discord</a>
+      <a href="#tienda">Tienda</a>
+    </nav>
+
+  </div>
 </header>
 
-<!-- INICIO (ACTIVO POR DEFECTO) -->
-<section id="inicio" class="activa" style="text-align:center;">
+<!-- HERO -->
 
-  <h1>Bienvenido a <span style="color:#00bfff;">Minewold</span></h1>
+<section class="hero" id="inicio">
 
-  <p>
-    🌍 Minewold es un servidor de Minecraft con modos únicos, eventos y comunidad activa.
-  </p>
+  <div class="hero-content">
+
+    <!-- CAMBIA logo.png POR TU LOGO -->
+    <img src="logo.png" alt="Minewold">
+
+    <h2>
+      Bienvenido a <span>Minewold</span>
+    </h2>
+
+    <p>
+      El servidor de Minecraft donde la aventura nunca termina.
+      Eventos épicos, modos únicos, economía, PvP competitivo
+      y una comunidad activa todos los días.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#discord" class="btn btn-primary">Entrar al servidor</a>
+      <a href="#tienda" class="btn btn-secondary">Ver tienda</a>
+    </div>
+
+  </div>
 
 </section>
 
-<!-- TIENDA -->
-<section id="tienda" style="text-align:center;">
+<!-- STATS -->
 
-  <h2>TIENDA</h2>
+<div class="stats">
 
-  <p>Compra rangos, kits y ventajas exclusivas.</p>
+  <div class="stat-card">
+    <h3>+1200</h3>
+    <p>Jugadores registrados</p>
+  </div>
 
-  <a class="btn" href="https://tienda.minewold.net" target="_blank">
-    Entrar
-  </a>
+  <div class="stat-card">
+    <h3>24/7</h3>
+    <p>Servidor online siempre</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>+10</h3>
+    <p>Eventos semanales</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>99%</h3>
+    <p>Anti-Lag optimizado</p>
+  </div>
+
+</div>
+
+<!-- MODOS -->
+
+<section class="section" id="modos">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Modos de juego</h2>
+      <p>Experiencias únicas inspiradas en grandes networks.</p>
+    </div>
+
+    <div class="modes">
+
+      <div class="mode-card">
+        <h3>⚔ Survival</h3>
+        <p>
+          Sobrevive, construye y comercia con una economía avanzada,
+          sistema de clanes y eventos especiales.
+        </p>
+      </div>
+
+      <div class="mode-card">
+        <h3>🏆 PvP Arena</h3>
+        <p>
+          Demuestra tu habilidad en combates intensos,
+          rankings competitivos y recompensas exclusivas.
+        </p>
+      </div>
+
+      <div class="mode-card">
+        <h3>🌎 SkyBlock</h3>
+        <p>
+          Crea tu isla, mejora tus recursos y conviértete
+          en el jugador más poderoso de Minewold.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 <!-- REGLAS -->
-<section id="reglas">
 
-  <h2>Reglas del servidor</h2>
+<section class="section" id="reglas">
 
-  <details>
-    <summary>📌 Reglas generales</summary>
+  <div class="container">
 
-    <div class="contenido">
+    <div class="section-title">
+      <h2>Reglas del servidor</h2>
+      <p>Mantengamos una comunidad sana y divertida.</p>
+    </div>
 
-      <div class="sub">
-        - Respetar a todos<br>
-        - No insultos<br>
-        - No toxicidad
-      </div>
+    <div class="rules-box">
 
-      <div class="sub">
-        - No hacks<br>
-        - No spam<br>
-        - No exploits
-      </div>
+      <details>
+        <summary>📌 Reglas generales</summary>
+
+        <div class="rules-content">
+          • Respeta a todos los jugadores.<br>
+          • No hacks ni clientes ilegales.<br>
+          • No spam ni flood.<br>
+          • No aprovechar bugs o exploits.<br>
+          • Toxicidad excesiva = sanción.
+        </div>
+
+      </details>
+
+      <details>
+        <summary>⚔ Reglas PvP</summary>
+
+        <div class="rules-content">
+          • No teaming abusivo.<br>
+          • No auto-clickers.<br>
+          • Prohibido el uso de macros.
+        </div>
+
+      </details>
 
     </div>
-  </details>
+
+  </div>
 
 </section>
 
-<!-- DISCORD -->
-<section id="discord" style="text-align:center;">
+<!-- CTA -->
 
-  <h2>Discord</h2>
+<div class="cta" id="discord">
 
-  <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
-    Entrar
+  <h2>Únete a la comunidad</h2>
+
+  <p>
+    Entra al Discord oficial de Minewold y juega con cientos de jugadores.
+  </p>
+
+  <a href="https://discord.gg/tu-invite" target="_blank" class="btn btn-primary">
+    Entrar al Discord
   </a>
 
+</div>
+
+<!-- TIENDA -->
+
+<section class="section" id="tienda">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Tienda oficial</h2>
+      <p>Compra rangos, cosméticos y ventajas exclusivas.</p>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="https://tienda.minewold.net" target="_blank" class="btn btn-primary">
+        Ir a la tienda
+      </a>
+    </div>
+
+  </div>
+
 </section>
 
-<!-- SOPORTE -->
-<section id="soporte" style="text-align:center;">
-
-  <h2>Soporte</h2>
-
-  <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
-    Abrir ticket
-  </a>
-
-</section>
-
-<!-- JS ARREGLADO -->
-<script>
-function ir(id){
-
-  document.querySelectorAll("section").forEach(s => {
-    s.classList.remove("activa");
-  });
-
-  document.getElementById(id).classList.add("activa");
-
-}
-</script>
+<footer>
+  © 2025 Minewold Network — Todos los derechos reservados.
+</footer>
 
 </body>
 </html>
+```
+
+## Cómo poner el logo
+
+1. Guarda tu logo como:
+
+```bash
+logo.png
+```
+
+2. Pon el archivo dentro de la misma carpeta del HTML.
+
+3. Abre el HTML y automáticamente aparecerá.
+
+## Resultado
+
+✔ Diseño moderno estilo Hypixel
+✔ Navbar transparente premium
+✔ Efectos glassmorphism
+✔ Animaciones suaves
+✔ Responsive para móvil
+✔ Hero profesional
+✔ Cards modernas
+✔ Secciones premium
+✔ Mucho más visual y competitivo
