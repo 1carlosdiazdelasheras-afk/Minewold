@@ -103,67 +103,36 @@ summary{
 
 <body>
 
-<!-- MENU -->
+<!-- MENU (ARREGLADO) -->
 <header>
-<header>
-  <a href="javascript:void(0)" onclick="mostrar('inicio')">Inicio</a>
-  <a href="javascript:void(0)" onclick="mostrar('tienda')">Tienda</a>
-  <a href="javascript:void(0)" onclick="mostrar('reglas')">Reglas</a>
-  <a href="javascript:void(0)" onclick="mostrar('discord')">Discord</a>
-  <a href="javascript:void(0)" onclick="mostrar('soporte')">Soporte</a>
-</header>
+  <a href="javascript:void(0)" onclick="ir('inicio')">Inicio</a>
+  <a href="javascript:void(0)" onclick="ir('tienda')">Tienda</a>
+  <a href="javascript:void(0)" onclick="ir('reglas')">Reglas</a>
+  <a href="javascript:void(0)" onclick="ir('discord')">Discord</a>
+  <a href="javascript:void(0)" onclick="ir('soporte')">Soporte</a>
 </header>
 
-<!-- INICIO -->
-<section id="inicio" style="text-align:center;">
+<!-- INICIO (ACTIVO POR DEFECTO) -->
+<section id="inicio" class="activa" style="text-align:center;">
 
   <h1>Bienvenido a <span style="color:#00bfff;">Minewold</span></h1>
 
   <p>
-    🌍 Minewold es un servidor de Minecraft diseñado para ofrecerte una experiencia única,
-    divertida y totalmente personalizada dentro de la comunidad.
+    🌍 Minewold es un servidor de Minecraft con modos únicos, eventos y comunidad activa.
   </p>
 
-  <hr style="border:1px solid #222; margin:20px auto; width:60%;">
+</section>
 
-  <h2>🎮 Nuestra experiencia</h2>
+<!-- TIENDA -->
+<section id="tienda" style="text-align:center;">
 
-  <p>
-    En Minewold podrás disfrutar de modos de juego como Survival, PvP y eventos especiales
-    creados para mantener la diversión activa todos los días.
-  </p>
+  <h2>TIENDA</h2>
 
-  <p>
-    Todo está optimizado para que tengas una experiencia fluida, estable y sin lag,
-    con sistemas personalizados que hacen que el servidor sea diferente a los demás.
-  </p>
+  <p>Compra rangos, kits y ventajas exclusivas.</p>
 
-  <hr style="border:1px solid #222; margin:20px auto; width:60%;">
-
-  <h2>⭐ Comunidad y Staff</h2>
-
-  <p>
-    Contamos con una comunidad activa y en crecimiento donde podrás jugar con amigos,
-    hacer equipo o competir contra otros jugadores.
-  </p>
-
-  <p>
-    Nuestro equipo de staff está siempre disponible para ayudarte, resolver dudas
-    y mantener un entorno justo y respetuoso para todos.
-  </p>
-
-  <hr style="border:1px solid #222; margin:20px auto; width:60%;">
-
-  <h2>🚀 Empieza ahora</h2>
-
-  <p>
-    Únete a nuestro Discord para enterarte de eventos, actualizaciones y sorteos exclusivos.
-    También puedes visitar la tienda para conseguir rangos y mejoras dentro del servidor.
-  </p>
-
-  <p style="font-weight:bold; color:#00bfff;">
-    ¿Estás listo para empezar tu aventura en Minewold?
-  </p>
+  <a class="btn" href="https://tienda.minewold.net" target="_blank">
+    Entrar
+  </a>
 
 </section>
 
@@ -173,75 +142,31 @@ summary{
   <h2>Reglas del servidor</h2>
 
   <details>
-
     <summary>📌 Reglas generales</summary>
 
     <div class="contenido">
 
       <div class="sub">
-        <strong>Comportamiento</strong><br>
         - Respetar a todos<br>
         - No insultos<br>
         - No toxicidad
       </div>
 
       <div class="sub">
-        <strong>Prohibiciones</strong><br>
         - No hacks<br>
         - No spam<br>
         - No exploits
       </div>
 
     </div>
-
-  </details>
-
-  <details>
-
-    <summary>📌 Reglas de chat</summary>
-
-    <div class="contenido">
-
-      <div class="sub">
-        <strong>Chat</strong><br>
-        - No flood<br>
-        - No spam<br>
-        - Lenguaje respetuoso
-      </div>
-
-      <div class="sub">
-        <strong>Voz</strong><br>
-        - No gritar<br>
-        - No molestar<br>
-        - Respeto
-      </div>
-
-    </div>
-
   </details>
 
 </section>
 
-<!-- TIENDA -->
-<section id="tienda" style="text-align:center;">
-
-  <h2>TIENDA</h2>
-
-  <p>Bienvenido a la tienda oficial de Minewold. Aquí podrás encontrar rangos, kits y ventajas exclusivas para mejorar</p>
-  <p>tu experiencia dentro del servidor. Todas las compras ayudan a mantener el servidor activo y en constante mejora.</p>
-
-  <a class="btn" href="https://tienda.minewold.net" target="_blank">
-    Entrar
-  </a>
-
-</section>
-
-  <!-- DISCORD -->
-<section id="discord">
+<!-- DISCORD -->
+<section id="discord" style="text-align:center;">
 
   <h2>Discord</h2>
-
-  <p>Únete a nuestra comunidad.</p>
 
   <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
     Entrar
@@ -250,28 +175,25 @@ summary{
 </section>
 
 <!-- SOPORTE -->
-<section id="soporte">
+<section id="soporte" style="text-align:center;">
 
   <h2>Soporte</h2>
 
-  <p>Abre ticket en Discord si necesitas ayuda.</p>
-
   <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
-    Soporte
+    Abrir ticket
   </a>
 
 </section>
 
+<!-- JS ARREGLADO -->
 <script>
 function ir(id){
 
   document.querySelectorAll("section").forEach(s => {
-    s.classList.remove("activo");
-    s.classList.add("oculto");
+    s.classList.remove("activa");
   });
 
-  document.getElementById(id).classList.remove("oculto");
-  document.getElementById(id).classList.add("activo");
+  document.getElementById(id).classList.add("activa");
 
 }
 </script>
