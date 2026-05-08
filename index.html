@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Tienda del Servidor</title>
 
   <style>
@@ -17,6 +18,7 @@
       font-family:Arial, sans-serif;
       background:#0f0f0f;
       color:white;
+      scroll-behavior:smooth;
     }
 
     header{
@@ -25,15 +27,17 @@
       display:flex;
       justify-content:center;
       gap:25px;
-      border-bottom:2px solid #00bfff;
       position:sticky;
       top:0;
+      border-bottom:2px solid #00bfff;
+      z-index:1000;
     }
 
     header a{
       color:white;
       text-decoration:none;
       font-weight:bold;
+      transition:0.3s;
     }
 
     header a:hover{
@@ -41,14 +45,14 @@
     }
 
     section{
-      padding:70px 20px;
+      padding:80px 20px;
       max-width:900px;
       margin:auto;
     }
 
     h1,h2{
-      margin-bottom:20px;
       color:#00bfff;
+      margin-bottom:20px;
     }
 
     p{
@@ -60,13 +64,15 @@
       margin-top:20px;
       padding:12px 25px;
       background:#00bfff;
-      border-radius:8px;
-      text-decoration:none;
       color:white;
+      text-decoration:none;
+      border-radius:8px;
+      transition:0.3s;
     }
 
     .btn:hover{
       background:#0095cc;
+      transform:scale(1.05);
     }
 
     /* REGLAS */
@@ -74,9 +80,9 @@
     .categoria{
       margin-top:15px;
       background:#1b1b1b;
+      border:1px solid #333;
       border-radius:10px;
       overflow:hidden;
-      border:1px solid #333;
     }
 
     .categoria summary{
@@ -103,7 +109,6 @@
     .subcategoria summary{
       padding:12px;
       cursor:pointer;
-      color:white;
       font-weight:bold;
       list-style:none;
     }
@@ -114,8 +119,9 @@
     }
 
     footer{
-      text-align:center;
+      margin-top:50px;
       padding:30px;
+      text-align:center;
       background:#111;
       border-top:2px solid #00bfff;
     }
@@ -134,17 +140,21 @@
     <a href="#soporte">Soporte</a>
   </header>
 
+
+
   <!-- INICIO -->
   <section id="inicio">
 
     <h1>Bienvenido a nuestra tienda</h1>
 
     <p>
-      Bienvenido al servidor oficial. Aquí encontrarás productos,
-      rangos y servicios exclusivos para mejorar tu experiencia.
+      Bienvenido al servidor oficial.
+      Aquí encontrarás productos y servicios exclusivos.
     </p>
 
   </section>
+
+
 
   <!-- TIENDA -->
   <section id="tienda">
@@ -152,7 +162,7 @@
     <h2>Tienda Oficial</h2>
 
     <p>
-      Compra rangos, kits y monedas desde nuestra tienda.
+      Compra rangos, kits y monedas.
     </p>
 
     <a class="btn"
@@ -162,6 +172,8 @@
     </a>
 
   </section>
+
+
 
   <!-- REGLAS -->
   <section id="reglas">
@@ -175,18 +187,20 @@
 
       <div class="contenido">
 
+        <!-- SUBCATEGORIA -->
         <details class="subcategoria">
 
           <summary>✅ Comportamiento</summary>
 
           <div class="subcontenido">
-            - Respetar a todos los usuarios<br>
+            - Respetar usuarios<br>
             - No insultar<br>
-            - No provocar peleas
+            - No peleas
           </div>
 
         </details>
 
+        <!-- SUBCATEGORIA -->
         <details class="subcategoria">
 
           <summary>🚫 Prohibiciones</summary>
@@ -203,6 +217,8 @@
 
     </details>
 
+
+
     <!-- CATEGORIA 2 -->
     <details class="categoria">
 
@@ -210,6 +226,7 @@
 
       <div class="contenido">
 
+        <!-- SUBCATEGORIA -->
         <details class="subcategoria">
 
           <summary>💬 Uso del chat</summary>
@@ -222,6 +239,7 @@
 
         </details>
 
+        <!-- SUBCATEGORIA -->
         <details class="subcategoria">
 
           <summary>🎤 Canales de voz</summary>
@@ -240,6 +258,8 @@
 
   </section>
 
+
+
   <!-- DISCORD -->
   <section id="discord">
 
@@ -256,6 +276,8 @@
     </a>
 
   </section>
+
+
 
   <!-- SOPORTE -->
   <section id="soporte">
@@ -274,8 +296,11 @@
 
   </section>
 
+
+
+  <!-- FOOTER -->
   <footer>
-    © 20266 - Tienda Oficial
+    © 2026 - Tienda Oficial del Servidor
   </footer>
 
 </body>
