@@ -1,101 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Tienda</title>
 
-<title>Mi Servidor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+    }
 
-<style>
+    header {
+      background: #111;
+      padding: 15px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    header a {
+      color: white;
+      text-decoration: none;
+      margin: 10px;
+      font-weight: bold;
+    }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#0f172a;
-    color:white;
-}
+    header a:hover {
+      color: #00bfff;
+    }
 
-/* MENU */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-nav{
-    background:#111827;
-    padding:20px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-}
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #00bfff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    background:#1e293b;
-    padding:12px 20px;
-    border-radius:10px;
-    transition:0.3s;
-}
+    .btn:hover {
+      background: #0095cc;
+    }
 
-nav a:hover{
-    background:#38bdf8;
-    transform:scale(1.05);
-}
+    /* Reglas acordeón */
+    details {
+      background: #1a1a1a;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+    }
 
-/* CONTENIDO */
-
-.hero{
-    text-align:center;
-    padding:120px 20px;
-}
-
-.hero h1{
-    font-size:60px;
-    color:#38bdf8;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:24px;
-    color:#cbd5e1;
-}
-
-</style>
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- MENU -->
+  <!-- NAV -->
+  <header>
+    <a href="#inicio">Inicio</a>
+    <a href="#tienda">Tienda</a>
+    <a href="#reglas">Reglas</a>
+    <a href="#discord">Discord</a>
+    <a href="#soporte">Soporte</a>
+  </header>
 
-<nav>
-    <a href="#">Inicio</a>
-
-    <a href="https://tienda.minewold.net" target="_blank">
-        Tienda
-    </a>
-
-    <a href="https://discord.minewold.net" target="_blank">
-        Discord
-    </a>
-
-    <a href="https://discord.minewold.net" target="_blank">
-        Soporte
-    </a>
-</nav>
-
-<!-- CONTENIDO -->
-
-<section class="hero">
-
-    <h1>Mi Servidor 🚀</h1>
-
+  <!-- INICIO -->
+  <section id="inicio">
+    <h1>Bienvenido a nuestra tienda</h1>
     <p>
-        Bienvenido a la web oficial del servidor
+      Aquí encontrarás los mejores productos y servicios del servidor.
+      Todo está diseñado para mejorar tu experiencia dentro de nuestra comunidad.
     </p>
+  </section>
 
-</section>
+  <!-- TIENDA -->
+  <section id="tienda">
+    <h2>Tienda</h2>
+    <p>Accede a la tienda oficial del servidor:</p>
+
+    <a class="btn" href="https://tu-tienda-aqui.com" target="_blank">
+      Ir a la tienda
+    </a>
+  </section>
+
+  <!-- REGLAS -->
+  <section id="reglas">
+    <h2>Reglas del servidor</h2>
+
+    <details>
+      <summary>📌 Reglas generales</summary>
+      <p>
+        - No insultar ni faltar al respeto<br>
+        - Prohibido el spam<br>
+        - No hacer trampa o uso de hacks<br>
+      </p>
+    </details>
+
+    <details>
+      <summary>📌 Reglas de chat / comportamiento</summary>
+      <p>
+        - Mantener un lenguaje adecuado<br>
+        - No flood ni mayúsculas excesivas<br>
+        - Respetar a todos los usuarios y staff<br>
+      </p>
+    </details>
+  </section>
+
+  <!-- DISCORD -->
+  <section id="discord">
+    <h2>Discord</h2>
+    <p>Únete a nuestra comunidad:</p>
+
+    <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
+      Entrar al Discord
+    </a>
+  </section>
+
+  <!-- SOPORTE -->
+  <section id="soporte">
+    <h2>Soporte</h2>
+    <p>Si necesitas ayuda, abre ticket en nuestro Discord.</p>
+
+    <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
+      Soporte en Discord
+    </a>
+  </section>
 
 </body>
 </html>
