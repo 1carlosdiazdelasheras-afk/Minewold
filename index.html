@@ -263,17 +263,10 @@ summary{
 </section>
 
 <script>
-
 function mostrar(id){
-
-  let secciones = document.querySelectorAll("section");
-
-  secciones.forEach(s => s.classList.remove("activa"));
-
+  document.querySelectorAll("section").forEach(s => s.classList.remove("activa"));
   document.getElementById(id).classList.add("activa");
-
 }
-
 </script>
 
 </body>
