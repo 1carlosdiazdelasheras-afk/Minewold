@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Tienda del Servidor</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -14,30 +14,26 @@
     }
 
     body{
-      font-family: Arial, sans-serif;
+      font-family:Arial, sans-serif;
       background:#0f0f0f;
       color:white;
-      scroll-behavior:smooth;
     }
 
     header{
-      width:100%;
       background:#111;
       padding:20px;
       display:flex;
       justify-content:center;
-      gap:30px;
+      gap:25px;
+      border-bottom:2px solid #00bfff;
       position:sticky;
       top:0;
-      z-index:1000;
-      border-bottom:2px solid #00bfff;
     }
 
     header a{
       color:white;
       text-decoration:none;
       font-weight:bold;
-      transition:0.3s;
     }
 
     header a:hover{
@@ -45,7 +41,7 @@
     }
 
     section{
-      padding:80px 20px;
+      padding:70px 20px;
       max-width:900px;
       margin:auto;
     }
@@ -64,45 +60,66 @@
       margin-top:20px;
       padding:12px 25px;
       background:#00bfff;
-      color:white;
-      text-decoration:none;
       border-radius:8px;
-      transition:0.3s;
+      text-decoration:none;
+      color:white;
     }
 
     .btn:hover{
       background:#0095cc;
-      transform:scale(1.05);
     }
 
     /* REGLAS */
-    details{
-      background:#1a1a1a;
+
+    .categoria{
       margin-top:15px;
-      padding:15px;
+      background:#1b1b1b;
       border-radius:10px;
+      overflow:hidden;
       border:1px solid #333;
     }
 
-    summary{
+    .categoria summary{
+      padding:15px;
       cursor:pointer;
-      font-weight:bold;
       font-size:18px;
+      font-weight:bold;
       color:#00bfff;
+      list-style:none;
     }
 
-    .sub{
-      margin-left:20px;
-      background:#222;
+    .contenido{
+      padding:15px;
+      border-top:1px solid #333;
+    }
+
+    .subcategoria{
+      margin-top:10px;
+      background:#242424;
+      border-radius:8px;
+      overflow:hidden;
+    }
+
+    .subcategoria summary{
+      padding:12px;
+      cursor:pointer;
+      color:white;
+      font-weight:bold;
+      list-style:none;
+    }
+
+    .subcontenido{
+      padding:12px;
+      border-top:1px solid #444;
     }
 
     footer{
       text-align:center;
       padding:30px;
       background:#111;
-      margin-top:50px;
       border-top:2px solid #00bfff;
     }
+
   </style>
 </head>
 
@@ -119,27 +136,23 @@
 
   <!-- INICIO -->
   <section id="inicio">
-    <h1>Bienvenido a MineWold</h1>
+
+    <h1>Bienvenido a nuestra tienda</h1>
 
     <p>
-      Bienvenido al servidor oficial. Aquí podrás encontrar productos,
-      rangos y servicios exclusivos para mejorar tu experiencia dentro
-      de nuestra comunidad.
+      Bienvenido al servidor oficial. Aquí encontrarás productos,
+      rangos y servicios exclusivos para mejorar tu experiencia.
     </p>
 
-    <p>
-      Nuestro objetivo es ofrecer la mejor experiencia posible a todos
-      los jugadores con soporte rápido, eventos y una comunidad activa.
-    </p>
   </section>
 
   <!-- TIENDA -->
   <section id="tienda">
+
     <h2>Tienda Oficial</h2>
 
     <p>
-      Accede a nuestra tienda oficial para comprar rangos,
-      monedas, kits y mucho más.
+      Compra rangos, kits y monedas desde nuestra tienda.
     </p>
 
     <a class="btn"
@@ -147,82 +160,93 @@
        target="_blank">
        Ir a la tienda
     </a>
+
   </section>
 
   <!-- REGLAS -->
   <section id="reglas">
+
     <h2>Reglas del servidor</h2>
 
-    <!-- DESPLEGABLE 1 -->
-    <details>
+    <!-- CATEGORIA 1 -->
+    <details class="categoria">
+
       <summary>📌 Reglas generales</summary>
 
-      <div class="sub">
+      <div class="contenido">
 
-        <!-- SUBDESPLEGABLE 1 -->
-        <details>
+        <details class="subcategoria">
+
           <summary>✅ Comportamiento</summary>
 
-          <p>
+          <div class="subcontenido">
             - Respetar a todos los usuarios<br>
-            - No insultar ni provocar peleas<br>
-            - Prohibido el acoso
-          </p>
+            - No insultar<br>
+            - No provocar peleas
+          </div>
+
         </details>
 
-        <!-- SUBDESPLEGABLE 2 -->
-        <details>
+        <details class="subcategoria">
+
           <summary>🚫 Prohibiciones</summary>
 
-          <p>
-            - No usar hacks o cheats<br>
-            - No hacer spam<br>
-            - No compartir contenido inapropiado
-          </p>
+          <div class="subcontenido">
+            - No hacks<br>
+            - No spam<br>
+            - No contenido inapropiado
+          </div>
+
         </details>
 
       </div>
+
     </details>
 
-    <!-- DESPLEGABLE 2 -->
-    <details>
-      <summary>📌 Reglas de chat / comportamiento</summary>
+    <!-- CATEGORIA 2 -->
+    <details class="categoria">
 
-      <div class="sub">
+      <summary>📌 Reglas de chat</summary>
 
-        <!-- SUBDESPLEGABLE 1 -->
-        <details>
+      <div class="contenido">
+
+        <details class="subcategoria">
+
           <summary>💬 Uso del chat</summary>
 
-          <p>
-            - Evitar flood<br>
-            - No abusar de mayúsculas<br>
-            - Mantener conversaciones sanas
-          </p>
+          <div class="subcontenido">
+            - No flood<br>
+            - No mayúsculas excesivas<br>
+            - Mantener respeto
+          </div>
+
         </details>
 
-        <!-- SUBDESPLEGABLE 2 -->
-        <details>
+        <details class="subcategoria">
+
           <summary>🎤 Canales de voz</summary>
 
-          <p>
-            - No gritar ni molestar<br>
-            - Usar micrófono adecuado<br>
-            - Respetar turnos al hablar
-          </p>
+          <div class="subcontenido">
+            - No gritar<br>
+            - Micrófono adecuado<br>
+            - Respetar turnos
+          </div>
+
         </details>
 
       </div>
+
     </details>
+
   </section>
 
   <!-- DISCORD -->
   <section id="discord">
+
     <h2>Discord Oficial</h2>
 
     <p>
-      Únete a nuestra comunidad de Discord para enterarte
-      de noticias, eventos y sorteos.
+      Únete a nuestra comunidad.
     </p>
 
     <a class="btn"
@@ -230,15 +254,16 @@
        target="_blank">
        Entrar al Discord
     </a>
+
   </section>
 
   <!-- SOPORTE -->
   <section id="soporte">
+
     <h2>Soporte</h2>
 
     <p>
-      ¿Necesitas ayuda? Nuestro equipo de soporte está
-      disponible en Discord mediante tickets.
+      Abre ticket en Discord si necesitas ayuda.
     </p>
 
     <a class="btn"
@@ -246,11 +271,11 @@
        target="_blank">
        Abrir soporte
     </a>
+
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    © 2026 - Tienda Oficial del Servidor
+    © 20266 - Tienda Oficial
   </footer>
 
 </body>
