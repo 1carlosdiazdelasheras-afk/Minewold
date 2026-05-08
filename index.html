@@ -263,9 +263,16 @@ summary{
 </section>
 
 <script>
-function mostrar(id){
-  document.querySelectorAll("section").forEach(s => s.classList.remove("activa"));
-  document.getElementById(id).classList.add("activa");
+function ir(id){
+
+  document.querySelectorAll("section").forEach(s => {
+    s.classList.remove("activo");
+    s.classList.add("oculto");
+  });
+
+  document.getElementById(id).classList.remove("oculto");
+  document.getElementById(id).classList.add("activo");
+
 }
 </script>
 
