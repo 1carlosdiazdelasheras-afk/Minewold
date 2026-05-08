@@ -1,307 +1,316 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tienda del Servidor</title>
+<title>Tienda del Servidor</title>
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body{
-      font-family:Arial, sans-serif;
-      background:#0f0f0f;
-      color:white;
-      scroll-behavior:smooth;
-    }
+body{
+  font-family:Arial, sans-serif;
+  background:#0f0f0f;
+  color:white;
+}
 
-    header{
-      background:#111;
-      padding:20px;
-      display:flex;
-      justify-content:center;
-      gap:25px;
-      position:sticky;
-      top:0;
-      border-bottom:2px solid #00bfff;
-      z-index:1000;
-    }
+/* MENU */
 
-    header a{
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.3s;
-    }
+header{
+  background:#111;
+  padding:20px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  border-bottom:2px solid #00bfff;
+}
 
-    header a:hover{
-      color:#00bfff;
-    }
+header button{
+  background:none;
+  border:none;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    section{
-      padding:80px 20px;
-      max-width:900px;
-      margin:auto;
-    }
+header button:hover{
+  color:#00bfff;
+}
 
-    h1,h2{
-      color:#00bfff;
-      margin-bottom:20px;
-    }
+/* CATEGORIAS */
 
-    p{
-      line-height:1.7;
-    }
+.categoria{
+  display:none;
+  padding:80px 20px;
+  max-width:900px;
+  margin:auto;
+}
 
-    .btn{
-      display:inline-block;
-      margin-top:20px;
-      padding:12px 25px;
-      background:#00bfff;
-      color:white;
-      text-decoration:none;
-      border-radius:8px;
-      transition:0.3s;
-    }
+.activa{
+  display:block;
+}
 
-    .btn:hover{
-      background:#0095cc;
-      transform:scale(1.05);
-    }
+h1,h2{
+  color:#00bfff;
+  margin-bottom:20px;
+}
 
-    /* REGLAS */
+p{
+  line-height:1.7;
+}
 
-    .categoria{
-      margin-top:15px;
-      background:#1b1b1b;
-      border:1px solid #333;
-      border-radius:10px;
-      overflow:hidden;
-    }
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:#00bfff;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+}
 
-    .categoria summary{
-      padding:15px;
-      cursor:pointer;
-      font-size:18px;
-      font-weight:bold;
-      color:#00bfff;
-      list-style:none;
-    }
+.btn:hover{
+  background:#0095cc;
+}
 
-    .contenido{
-      padding:15px;
-      border-top:1px solid #333;
-    }
+/* REGLAS */
 
-    .subcategoria{
-      margin-top:10px;
-      background:#242424;
-      border-radius:8px;
-      overflow:hidden;
-    }
+details{
+  margin-top:15px;
+  background:#1b1b1b;
+  border-radius:10px;
+  overflow:hidden;
+}
 
-    .subcategoria summary{
-      padding:12px;
-      cursor:pointer;
-      font-weight:bold;
-      list-style:none;
-    }
+summary{
+  padding:15px;
+  cursor:pointer;
+  font-weight:bold;
+  color:#00bfff;
+}
 
-    .subcontenido{
-      padding:12px;
-      border-top:1px solid #444;
-    }
+.subcontenido{
+  padding:15px;
+  border-top:1px solid #333;
+}
 
-    footer{
-      margin-top:50px;
-      padding:30px;
-      text-align:center;
-      background:#111;
-      border-top:2px solid #00bfff;
-    }
+footer{
+  margin-top:50px;
+  padding:30px;
+  text-align:center;
+  background:#111;
+  border-top:2px solid #00bfff;
+}
 
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- MENU -->
-  <header>
-    <a href="#inicio">Inicio</a>
-    <a href="#tienda">Tienda</a>
-    <a href="#reglas">Reglas</a>
-    <a href="#discord">Discord</a>
-    <a href="#soporte">Soporte</a>
-  </header>
+<!-- MENU -->
+
+<header>
+
+<button onclick="mostrar('inicio')">Inicio</button>
+
+<button onclick="mostrar('tienda')">Tienda</button>
+
+<button onclick="mostrar('reglas')">Reglas</button>
+
+<button onclick="mostrar('discord')">Discord</button>
+
+<button onclick="mostrar('soporte')">Soporte</button>
+
+</header>
 
 
 
-  <!-- INICIO -->
-  <section id="inicio">
+<!-- INICIO -->
 
-    <h1>Bienvenido a nuestra tienda</h1>
+<section id="inicio" class="categoria activa">
 
-    <p>
-      Bienvenido al servidor oficial.
-      Aquí encontrarás productos y servicios exclusivos.
-    </p>
+<h1>Bienvenido</h1>
 
-  </section>
+<p>
+Bienvenido a nuestra tienda oficial.
+Aquí encontrarás productos y servicios exclusivos.
+</p>
 
-
-
-  <!-- TIENDA -->
-  <section id="tienda">
-
-    <h2>Tienda Oficial</h2>
-
-    <p>
-      Compra rangos, kits y monedas.
-    </p>
-
-    <a class="btn"
-       href="https://tu-tienda-aqui.com"
-       target="_blank">
-       Ir a la tienda
-    </a>
-
-  </section>
+</section>
 
 
 
-  <!-- REGLAS -->
-  <section id="reglas">
+<!-- TIENDA -->
 
-    <h2>Reglas del servidor</h2>
+<section id="tienda" class="categoria">
 
-    <!-- CATEGORIA 1 -->
-    <details class="categoria">
+<h2>Tienda Oficial</h2>
 
-      <summary>📌 Reglas generales</summary>
+<p>
+Compra rangos, monedas y kits.
+</p>
 
-      <div class="contenido">
+<a class="btn"
+href="https://tu-tienda-aqui.com"
+target="_blank">
+Ir a la tienda
+</a>
 
-        <!-- SUBCATEGORIA -->
-        <details class="subcategoria">
-
-          <summary>✅ Comportamiento</summary>
-
-          <div class="subcontenido">
-            - Respetar usuarios<br>
-            - No insultar<br>
-            - No peleas
-          </div>
-
-        </details>
-
-        <!-- SUBCATEGORIA -->
-        <details class="subcategoria">
-
-          <summary>🚫 Prohibiciones</summary>
-
-          <div class="subcontenido">
-            - No hacks<br>
-            - No spam<br>
-            - No contenido inapropiado
-          </div>
-
-        </details>
-
-      </div>
-
-    </details>
+</section>
 
 
 
-    <!-- CATEGORIA 2 -->
-    <details class="categoria">
+<!-- REGLAS -->
 
-      <summary>📌 Reglas de chat</summary>
+<section id="reglas" class="categoria">
 
-      <div class="contenido">
+<h2>Reglas del servidor</h2>
 
-        <!-- SUBCATEGORIA -->
-        <details class="subcategoria">
+<details>
 
-          <summary>💬 Uso del chat</summary>
+<summary>📌 Reglas generales</summary>
 
-          <div class="subcontenido">
-            - No flood<br>
-            - No mayúsculas excesivas<br>
-            - Mantener respeto
-          </div>
+<div class="subcontenido">
 
-        </details>
+<details>
 
-        <!-- SUBCATEGORIA -->
-        <details class="subcategoria">
+<summary>✅ Comportamiento</summary>
 
-          <summary>🎤 Canales de voz</summary>
+<div class="subcontenido">
+- Respetar usuarios<br>
+- No insultar<br>
+- No peleas
+</div>
 
-          <div class="subcontenido">
-            - No gritar<br>
-            - Micrófono adecuado<br>
-            - Respetar turnos
-          </div>
+</details>
 
-        </details>
+<details>
 
-      </div>
+<summary>🚫 Prohibiciones</summary>
 
-    </details>
+<div class="subcontenido">
+- No hacks<br>
+- No spam<br>
+- No contenido inapropiado
+</div>
 
-  </section>
+</details>
 
+</div>
 
-
-  <!-- DISCORD -->
-  <section id="discord">
-
-    <h2>Discord Oficial</h2>
-
-    <p>
-      Únete a nuestra comunidad.
-    </p>
-
-    <a class="btn"
-       href="https://discord.gg/tu-invite"
-       target="_blank">
-       Entrar al Discord
-    </a>
-
-  </section>
+</details>
 
 
 
-  <!-- SOPORTE -->
-  <section id="soporte">
+<details>
 
-    <h2>Soporte</h2>
+<summary>📌 Reglas del chat</summary>
 
-    <p>
-      Abre ticket en Discord si necesitas ayuda.
-    </p>
+<div class="subcontenido">
 
-    <a class="btn"
-       href="https://discord.gg/tu-invite"
-       target="_blank">
-       Abrir soporte
-    </a>
+<details>
 
-  </section>
+<summary>💬 Uso del chat</summary>
+
+<div class="subcontenido">
+- No flood<br>
+- No mayúsculas<br>
+- Mantener respeto
+</div>
+
+</details>
+
+<details>
+
+<summary>🎤 Canales de voz</summary>
+
+<div class="subcontenido">
+- No gritar<br>
+- Buen micrófono<br>
+- Respetar turnos
+</div>
+
+</details>
+
+</div>
+
+</details>
+
+</section>
 
 
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 - Tienda Oficial del Servidor
-  </footer>
+<!-- DISCORD -->
+
+<section id="discord" class="categoria">
+
+<h2>Discord Oficial</h2>
+
+<p>
+Únete a nuestra comunidad de Discord.
+</p>
+
+<a class="btn"
+href="https://discord.gg/tu-invite"
+target="_blank">
+Entrar al Discord
+</a>
+
+</section>
+
+
+
+<!-- SOPORTE -->
+
+<section id="soporte" class="categoria">
+
+<h2>Soporte</h2>
+
+<p>
+Abre ticket en Discord para recibir ayuda.
+</p>
+
+<a class="btn"
+href="https://discord.gg/tu-invite"
+target="_blank">
+Abrir soporte
+</a>
+
+</section>
+
+
+
+<footer>
+© 20266 - Tienda Oficial
+</footer>
+
+
+
+<script>
+
+function mostrar(id){
+
+  let categorias =
+  document.querySelectorAll('.categoria');
+
+  categorias.forEach(categoria => {
+    categoria.classList.remove('activa');
+  });
+
+  document
+  .getElementById(id)
+  .classList.add('activa');
+
+}
+
+</script>
 
 </body>
 </html>
