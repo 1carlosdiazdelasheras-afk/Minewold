@@ -1,75 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mi Tienda</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tienda del Servidor</title>
 
   <style>
-    body {
-      margin: 0;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
       font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
+      background:#0f0f0f;
+      color:white;
+      scroll-behavior:smooth;
     }
 
-    header {
-      background: #111;
-      padding: 15px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
+    header{
+      width:100%;
+      background:#111;
+      padding:20px;
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      border-bottom:2px solid #00bfff;
     }
 
-    header a {
-      color: white;
-      text-decoration: none;
-      margin: 10px;
-      font-weight: bold;
+    header a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
     }
 
-    header a:hover {
-      color: #00bfff;
+    header a:hover{
+      color:#00bfff;
     }
 
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+    section{
+      padding:80px 20px;
+      max-width:900px;
+      margin:auto;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #00bfff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
+    h1,h2{
+      margin-bottom:20px;
+      color:#00bfff;
     }
 
-    .btn:hover {
-      background: #0095cc;
+    p{
+      line-height:1.7;
     }
 
-    /* Reglas acordeón */
-    details {
-      background: #1a1a1a;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 8px;
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 25px;
+      background:#00bfff;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      transition:0.3s;
     }
 
-    summary {
-      cursor: pointer;
-      font-weight: bold;
+    .btn:hover{
+      background:#0095cc;
+      transform:scale(1.05);
+    }
+
+    /* REGLAS */
+    details{
+      background:#1a1a1a;
+      margin-top:15px;
+      padding:15px;
+      border-radius:10px;
+      border:1px solid #333;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:bold;
+      font-size:18px;
+      color:#00bfff;
+    }
+
+    details details{
+      margin-left:20px;
+      background:#222;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#111;
+      margin-top:50px;
+      border-top:2px solid #00bfff;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- MENU -->
   <header>
     <a href="#inicio">Inicio</a>
     <a href="#tienda">Tienda</a>
@@ -81,19 +120,32 @@
   <!-- INICIO -->
   <section id="inicio">
     <h1>Bienvenido a nuestra tienda</h1>
+
     <p>
-      Aquí encontrarás los mejores productos y servicios del servidor.
-      Todo está diseñado para mejorar tu experiencia dentro de nuestra comunidad.
+      Bienvenido al servidor oficial. Aquí podrás encontrar productos,
+      rangos y servicios exclusivos para mejorar tu experiencia dentro
+      de nuestra comunidad.
+    </p>
+
+    <p>
+      Nuestro objetivo es ofrecer la mejor experiencia posible a todos
+      los jugadores con soporte rápido, eventos y una comunidad activa.
     </p>
   </section>
 
   <!-- TIENDA -->
   <section id="tienda">
-    <h2>Tienda</h2>
-    <p>Accede a la tienda oficial del servidor:</p>
+    <h2>Tienda Oficial</h2>
 
-    <a class="btn" href="https://tu-tienda-aqui.com" target="_blank">
-      Ir a la tienda
+    <p>
+      Accede a nuestra tienda oficial para comprar rangos,
+      monedas, kits y mucho más.
+    </p>
+
+    <a class="btn"
+       href="https://tu-tienda-aqui.com"
+       target="_blank">
+       Ir a la tienda
     </a>
   </section>
 
@@ -101,44 +153,99 @@
   <section id="reglas">
     <h2>Reglas del servidor</h2>
 
+    <!-- DESPLEGABLE 1 -->
     <details>
       <summary>📌 Reglas generales</summary>
-      <p>
-        - No insultar ni faltar al respeto<br>
-        - Prohibido el spam<br>
-        - No hacer trampa o uso de hacks<br>
-      </p>
+
+      <!-- SUBDESPLEGABLE 1 -->
+      <details>
+        <summary>✅ Comportamiento</summary>
+
+        <p>
+          - Respetar a todos los usuarios<br>
+          - No insultar ni provocar peleas<br>
+          - Prohibido el acoso
+        </p>
+      </details>
+
+      <!-- SUBDESPLEGABLE 2 -->
+      <details>
+        <summary>🚫 Prohibiciones</summary>
+
+        <p>
+          - No usar hacks o cheats<br>
+          - No hacer spam<br>
+          - No compartir contenido inapropiado
+        </p>
+      </details>
+
     </details>
 
+    <!-- DESPLEGABLE 2 -->
     <details>
       <summary>📌 Reglas de chat / comportamiento</summary>
-      <p>
-        - Mantener un lenguaje adecuado<br>
-        - No flood ni mayúsculas excesivas<br>
-        - Respetar a todos los usuarios y staff<br>
-      </p>
+
+      <!-- SUBDESPLEGABLE 1 -->
+      <details>
+        <summary>💬 Uso del chat</summary>
+
+        <p>
+          - Evitar flood<br>
+          - No abusar de mayúsculas<br>
+          - Mantener conversaciones sanas
+        </p>
+      </details>
+
+      <!-- SUBDESPLEGABLE 2 -->
+      <details>
+        <summary>🎤 Canales de voz</summary>
+
+        <p>
+          - No gritar ni molestar<br>
+          - Usar micrófono adecuado<br>
+          - Respetar turnos al hablar
+        </p>
+      </details>
+
     </details>
   </section>
 
   <!-- DISCORD -->
   <section id="discord">
-    <h2>Discord</h2>
-    <p>Únete a nuestra comunidad:</p>
+    <h2>Discord Oficial</h2>
 
-    <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
-      Entrar al Discord
+    <p>
+      Únete a nuestra comunidad de Discord para enterarte
+      de noticias, eventos y sorteos.
+    </p>
+
+    <a class="btn"
+       href="https://discord.gg/tu-invite"
+       target="_blank">
+       Entrar al Discord
     </a>
   </section>
 
   <!-- SOPORTE -->
   <section id="soporte">
     <h2>Soporte</h2>
-    <p>Si necesitas ayuda, abre ticket en nuestro Discord.</p>
 
-    <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
-      Soporte en Discord
+    <p>
+      ¿Necesitas ayuda? Nuestro equipo de soporte está
+      disponible en Discord mediante tickets.
+    </p>
+
+    <a class="btn"
+       href="https://discord.gg/tu-invite"
+       target="_blank">
+       Abrir soporte
     </a>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 - Tienda Oficial del Servidor
+  </footer>
 
 </body>
 </html>
