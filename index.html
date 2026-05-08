@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tienda del Servidor</title>
+<title>Minewold</title>
 
 <style>
 
@@ -21,7 +21,6 @@ body{
 }
 
 /* MENU */
-
 header{
   background:#111;
   padding:20px;
@@ -29,43 +28,39 @@ header{
   justify-content:center;
   gap:25px;
   border-bottom:2px solid #00bfff;
+  position:sticky;
+  top:0;
 }
 
-header button{
-  background:none;
-  border:none;
+header a{
   color:white;
-  font-size:16px;
+  text-decoration:none;
   font-weight:bold;
-  cursor:pointer;
 }
 
-header button:hover{
+header a:hover{
   color:#00bfff;
 }
 
-/* CATEGORIAS */
-
-.categoria{
+/* SECCIONES */
+section{
   display:none;
   padding:80px 20px;
   max-width:900px;
   margin:auto;
 }
 
-.activa{
+section.activa{
   display:block;
 }
 
+/* TITULOS */
 h1,h2{
   color:#00bfff;
   margin-bottom:20px;
 }
 
-p{
-  line-height:1.7;
-}
-
+/* BOTON */
 .btn{
   display:inline-block;
   margin-top:20px;
@@ -76,15 +71,10 @@ p{
   border-radius:8px;
 }
 
-.btn:hover{
-  background:#0095cc;
-}
-
 /* REGLAS */
-
 details{
-  margin-top:15px;
   background:#1b1b1b;
+  margin-top:15px;
   border-radius:10px;
   overflow:hidden;
 }
@@ -96,17 +86,16 @@ summary{
   color:#00bfff;
 }
 
-.subcontenido{
+.contenido{
   padding:15px;
   border-top:1px solid #333;
 }
 
-footer{
-  margin-top:50px;
-  padding:30px;
-  text-align:center;
-  background:#111;
-  border-top:2px solid #00bfff;
+.sub{
+  background:#222;
+  margin-top:10px;
+  border-radius:8px;
+  padding:10px;
 }
 
 </style>
@@ -115,275 +104,131 @@ footer{
 <body>
 
 <!-- MENU -->
-
 <header>
-
-<button onclick="mostrar('inicio')">Inicio</button>
-
-<button onclick="mostrar('tienda')">Tienda</button>
-
-<button onclick="mostrar('reglas')">Reglas</button>
-
-<button onclick="mostrar('discord')">Discord</button>
-
-<button onclick="mostrar('soporte')">Soporte</button>
-
+  <a href="#" onclick="mostrar('inicio')">Inicio</a>
+  <a href="#" onclick="mostrar('tienda')">Tienda</a>
+  <a href="#" onclick="mostrar('reglas')">Reglas</a>
+  <a href="#" onclick="mostrar('discord')">Discord</a>
+  <a href="#" onclick="mostrar('soporte')">Soporte</a>
 </header>
 
-
-
 <!-- INICIO -->
+<section id="inicio" class="activa">
 
-<section id="inicio" style="text-align:center;">
-
-  <h1>Bienvenido a <span style="color:#00bfff;">Minewold</span></h1>
-
-  <p>
-    🌍 Minewold es un servidor de Minecraft diseñado para ofrecerte una experiencia única,
-    divertida y totalmente personalizada dentro de la comunidad.
-  </p>
-
-  <hr style="border:1px solid #222; margin:20px auto; width:60%;">
-
-  <h2>🎮 Nuestra experiencia</h2>
+  <h1>Bienvenido a Minewold</h1>
 
   <p>
-    En Minewold podrás disfrutar de modos de juego como Survival, PvP y eventos especiales
-    creados para mantener la diversión activa todos los días.
-  </p>
-
-  <p>
-    Todo está optimizado para que tengas una experiencia fluida, estable y sin lag,
-    con sistemas personalizados que hacen que el servidor sea diferente a los demás.
-  </p>
-
-  <hr style="border:1px solid #222; margin:20px auto; width:60%;">
-
-  <h2>⭐ Comunidad y Staff</h2>
-
-  <p>
-    Contamos con una comunidad activa y en crecimiento donde podrás jugar con amigos,
-    hacer equipo o competir contra otros jugadores.
-  </p>
-
-  <p>
-    Nuestro equipo de staff está siempre disponible para ayudarte, resolver dudas
-    y mantener un entorno justo y respetuoso para todos.
-  </p>
-
-  <hr style="border:1px solid #222; margin:20px auto; width:60%;">
-
-  <h2>🚀 Empieza ahora</h2>
-
-  <p>
-    Únete a nuestro Discord para enterarte de eventos, actualizaciones y sorteos exclusivos.
-    También puedes visitar la tienda para conseguir rangos y mejoras dentro del servidor.
-  </p>
-
-  <p style="font-weight:bold; color:#00bfff;">
-    ¿Estás listo para empezar tu aventura en Minewold?
+    Minewold es un servidor de Minecraft con modalidades únicas,
+    eventos y una comunidad activa.
   </p>
 
 </section>
-
-
 
 <!-- TIENDA -->
+<section id="tienda">
 
-<section id="inicio" style="text-align:center;">
-
-  <h1>Bienvenido a <span style="color:#00bfff;">Minewold</span></h1>
-
-  <p>
-    🌍 Minewold es un servidor de Minecraft diseñado para ofrecerte una experiencia única,
-    divertida y totalmente personalizada dentro de la comunidad.
-  </p>
-
-  <hr style="border:1px solid #222; margin:20px auto; width:60%;">
-
-  <h2>🎮 Nuestra experiencia</h2>
+  <h2>Tienda Oficial</h2>
 
   <p>
-    En Minewold podrás disfrutar de modos de juego como Survival, PvP y eventos especiales
-    creados para mantener la diversión activa todos los días.
+    Compra rangos, kits y ventajas dentro del servidor.
   </p>
 
-  <p>
-    Todo está optimizado para que tengas una experiencia fluida, estable y sin lag,
-    con sistemas personalizados que hacen que el servidor sea diferente a los demás.
-  </p>
-
-  <hr style="border:1px solid #222; margin:20px auto; width:60%;">
-
-  <h2>⭐ Comunidad y Staff</h2>
-
-  <p>
-    Contamos con una comunidad activa y en crecimiento donde podrás jugar con amigos,
-    hacer equipo o competir contra otros jugadores.
-  </p>
-
-  <p>
-    Nuestro equipo de staff está siempre disponible para ayudarte, resolver dudas
-    y mantener un entorno justo y respetuoso para todos.
-  </p>
-
-  <hr style="border:1px solid #222; margin:20px auto; width:60%;">
-
-  <h2>🚀 Empieza ahora</h2>
-
-  <p>
-    Únete a nuestro Discord para enterarte de eventos, actualizaciones y sorteos exclusivos.
-    También puedes visitar la tienda para conseguir rangos y mejoras dentro del servidor.
-  </p>
-
-  <p style="font-weight:bold; color:#00bfff;">
-    ¿Estás listo para empezar tu aventura en Minewold?
-  </p>
+  <a class="btn" href="https://tu-tienda.com" target="_blank">
+    Ir a la tienda
+  </a>
 
 </section>
-
-
 
 <!-- REGLAS -->
+<section id="reglas">
 
-<section id="reglas" class="categoria">
+  <h2>Reglas del servidor</h2>
 
-<h2>Reglas del servidor</h2>
+  <details>
 
-<details>
+    <summary>📌 Reglas generales</summary>
 
-<summary>📌 Reglas generales</summary>
+    <div class="contenido">
 
-<div class="subcontenido">
+      <div class="sub">
+        <strong>Comportamiento</strong><br>
+        - Respetar a todos<br>
+        - No insultos<br>
+        - No toxicidad
+      </div>
 
-<details>
+      <div class="sub">
+        <strong>Prohibiciones</strong><br>
+        - No hacks<br>
+        - No spam<br>
+        - No exploits
+      </div>
 
-<summary>✅ Comportamiento</summary>
+    </div>
 
-<div class="subcontenido">
-- Respetar usuarios<br>
-- No insultar<br>
-- No peleas
-</div>
+  </details>
 
-</details>
+  <details>
 
-<details>
+    <summary>📌 Reglas de chat</summary>
 
-<summary>🚫 Prohibiciones</summary>
+    <div class="contenido">
 
-<div class="subcontenido">
-- No hacks<br>
-- No spam<br>
-- No contenido inapropiado
-</div>
+      <div class="sub">
+        <strong>Chat</strong><br>
+        - No flood<br>
+        - No spam<br>
+        - Lenguaje respetuoso
+      </div>
 
-</details>
+      <div class="sub">
+        <strong>Voz</strong><br>
+        - No gritar<br>
+        - No molestar<br>
+        - Respeto
+      </div>
 
-</div>
+    </div>
 
-</details>
-
-
-
-<details>
-
-<summary>📌 Reglas del chat</summary>
-
-<div class="subcontenido">
-
-<details>
-
-<summary>💬 Uso del chat</summary>
-
-<div class="subcontenido">
-- No flood<br>
-- No mayúsculas<br>
-- Mantener respeto
-</div>
-
-</details>
-
-<details>
-
-<summary>🎤 Canales de voz</summary>
-
-<div class="subcontenido">
-- No gritar<br>
-- Buen micrófono<br>
-- Respetar turnos
-</div>
-
-</details>
-
-</div>
-
-</details>
+  </details>
 
 </section>
-
-
 
 <!-- DISCORD -->
+<section id="discord">
 
-<section id="discord" class="categoria">
+  <h2>Discord</h2>
 
-<h2>Discord Oficial</h2>
+  <p>Únete a nuestra comunidad.</p>
 
-<p>
-Únete a nuestra comunidad de Discord.
-</p>
-
-<a class="btn"
-href="https://discord.minewold.net"
-target="_blank">
-Entrar al Discord
-</a>
+  <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
+    Entrar
+  </a>
 
 </section>
-
-
 
 <!-- SOPORTE -->
+<section id="soporte">
 
-<section id="soporte" class="categoria">
+  <h2>Soporte</h2>
 
-<h2>Soporte</h2>
+  <p>Abre ticket en Discord si necesitas ayuda.</p>
 
-<p>
-Abre ticket en Discord para recibir ayuda.
-</p>
-
-<a class="btn"
-href="https://discord.minewold.net"
-target="_blank">
-Abrir soporte
-</a>
+  <a class="btn" href="https://discord.gg/tu-invite" target="_blank">
+    Soporte
+  </a>
 
 </section>
-
-
-
-<footer>
-© 2026 - Web Oficial
-</footer>
-
-
 
 <script>
 
 function mostrar(id){
 
-  let categorias =
-  document.querySelectorAll('.categoria');
+  let secciones = document.querySelectorAll("section");
 
-  categorias.forEach(categoria => {
-    categoria.classList.remove('activa');
-  });
+  secciones.forEach(s => s.classList.remove("activa"));
 
-  document
-  .getElementById(id)
-  .classList.add('activa');
+  document.getElementById(id).classList.add("activa");
 
 }
 
