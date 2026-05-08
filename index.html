@@ -1,397 +1,449 @@
-# Minewold - Web Profesional estilo Hypixel
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minewold Network</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:'Montserrat',sans-serif;
-  background:#090b14;
-  color:white;
-  overflow-x:hidden;
+    font-family:'Montserrat',sans-serif;
+    background:#090411;
+    color:white;
+    overflow-x:hidden;
 }
+
+/* BACKGROUND */
 
 body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-  radial-gradient(circle at top,#7d3cff33,transparent 40%),
-  radial-gradient(circle at bottom,#00c3ff22,transparent 40%),
-  linear-gradient(to bottom,#090b14,#111827);
-  z-index:-2;
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#ff5be433,transparent 25%),
+    radial-gradient(circle at bottom right,#8b4dff44,transparent 25%),
+    linear-gradient(to bottom,#090411,#13081f,#090411);
+    z-index:-5;
 }
 
-/* NAVBAR */
+/* HEADER */
 
 header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:999;
-  backdrop-filter:blur(14px);
-  background:rgba(7,10,20,0.75);
-  border-bottom:1px solid rgba(255,255,255,0.08);
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+    background:rgba(8,5,18,.78);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .navbar{
-  width:90%;
-  max-width:1400px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 0;
+    width:92%;
+    max-width:1450px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:15px;
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
 .logo img{
-  width:70px;
-  filter:drop-shadow(0 0 12px #00c3ff66);
+    width:75px;
+    filter:drop-shadow(0 0 20px #ff4fd8aa);
 }
 
 .logo h1{
-  font-size:1.6rem;
-  font-weight:800;
-  background:linear-gradient(to right,#ffffff,#b0f0ff,#d99cff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+    font-size:2rem;
+    font-weight:900;
+    background:linear-gradient(to right,#ffffff,#ff76ea,#8f4dff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 nav{
-  display:flex;
-  gap:35px;
+    display:flex;
+    gap:35px;
 }
 
 nav a{
-  color:#dbe4ff;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
-  position:relative;
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    position:relative;
+    transition:.3s;
 }
 
 nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-8px;
-  width:0%;
-  height:2px;
-  background:#00c3ff;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:white;
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0%;
+    height:3px;
+    border-radius:20px;
+    background:linear-gradient(to right,#ff4fd8,#8f4dff);
+    transition:.3s;
 }
 
 nav a:hover::after{
-  width:100%;
+    width:100%;
 }
 
 /* HERO */
 
 .hero{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:140px 20px 100px;
-  position:relative;
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+    padding:180px 20px 140px;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(rgba(7,5,15,.78),rgba(7,5,15,.9)),
+    url('https://wallpapercave.com/wp/wp2757874.gif');
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
 }
 
 .hero-content{
-  max-width:900px;
+    max-width:980px;
 }
 
 .hero img{
-  width:320px;
-  margin-bottom:20px;
-  animation:float 4s ease-in-out infinite;
-  filter:drop-shadow(0 0 25px rgba(163,78,255,0.5));
+    width:320px;
+    margin-bottom:25px;
+    animation:float 4s ease-in-out infinite;
+    filter:drop-shadow(0 0 35px rgba(255,90,220,.5));
 }
 
 @keyframes float{
-  0%,100%{transform:translateY(0px);}
-  50%{transform:translateY(-15px);}
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
 }
 
 .hero h2{
-  font-size:4rem;
-  font-weight:800;
-  line-height:1.1;
-  margin-bottom:20px;
+    font-size:5rem;
+    line-height:1;
+    margin-bottom:25px;
+    font-weight:900;
 }
 
 .hero h2 span{
-  background:linear-gradient(to right,#00c3ff,#d24fff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+    background:linear-gradient(to right,#ff5be4,#8f4dff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-  color:#cfd8ff;
-  font-size:1.15rem;
-  line-height:1.8;
-  margin-bottom:40px;
+    color:#efe4ff;
+    line-height:2;
+    font-size:1.2rem;
+    margin-bottom:45px;
 }
 
 .hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .btn{
-  padding:16px 32px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:700;
-  transition:0.3s;
-  display:inline-block;
+    display:inline-block;
+    padding:18px 38px;
+    border-radius:16px;
+    font-weight:800;
+    text-decoration:none;
+    transition:.3s;
 }
 
 .btn-primary{
-  background:linear-gradient(135deg,#00c3ff,#7d3cff);
-  color:white;
-  box-shadow:0 10px 30px rgba(0,195,255,0.35);
+    background:linear-gradient(135deg,#ff4fd8,#7d3cff);
+    color:white;
+    box-shadow:0 15px 35px rgba(255,80,220,.3);
 }
 
 .btn-primary:hover{
-  transform:translateY(-4px) scale(1.03);
+    transform:translateY(-5px) scale(1.03);
 }
 
 .btn-secondary{
-  border:1px solid rgba(255,255,255,0.15);
-  color:white;
-  background:rgba(255,255,255,0.05);
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    color:white;
 }
 
 .btn-secondary:hover{
-  background:rgba(255,255,255,0.12);
+    background:rgba(255,255,255,.12);
 }
 
 /* STATS */
 
 .stats{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-  margin-top:-70px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
+    width:92%;
+    max-width:1300px;
+    margin:auto;
+    margin-top:-70px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
 }
 
 .stat-card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:22px;
-  padding:35px;
-  backdrop-filter:blur(10px);
-  transition:0.3s;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:28px;
+    padding:38px;
+    backdrop-filter:blur(12px);
+    transition:.3s;
 }
 
 .stat-card:hover{
-  transform:translateY(-8px);
-  border-color:#00c3ff55;
+    transform:translateY(-8px);
+    border-color:#ff5be455;
 }
 
 .stat-card h3{
-  font-size:2.5rem;
-  margin-bottom:10px;
-  color:#00c3ff;
+    color:#ff7dea;
+    font-size:2.2rem;
+    margin-bottom:10px;
 }
 
 .stat-card p{
-  color:#c8d4ff;
+    color:#e9dcff;
 }
 
 /* SECTION */
 
 .section{
-  padding:120px 20px;
+    padding:130px 20px;
 }
 
 .container{
-  width:90%;
-  max-width:1300px;
-  margin:auto;
+    width:92%;
+    max-width:1400px;
+    margin:auto;
 }
 
 .section-title{
-  text-align:center;
-  margin-bottom:70px;
+    text-align:center;
+    margin-bottom:70px;
 }
 
 .section-title h2{
-  font-size:3rem;
-  margin-bottom:15px;
+    font-size:3.5rem;
+    margin-bottom:15px;
+    font-weight:900;
 }
 
 .section-title p{
-  color:#b7c4ef;
+    color:#d9c9ff;
 }
 
-/* MODOS */
+/* MODES */
 
 .modes{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:35px;
 }
 
 .mode-card{
-  background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:24px;
-  padding:40px;
-  transition:0.3s;
-  position:relative;
-  overflow:hidden;
-}
-
-.mode-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:4px;
-  background:linear-gradient(to right,#00c3ff,#d24fff);
+    min-height:500px;
+    border-radius:30px;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    padding:45px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
 }
 
 .mode-card:hover{
-  transform:translateY(-10px);
-  border-color:#7d3cff66;
+    transform:translateY(-10px);
+}
+
+.mode-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,#090411 15%,transparent);
+}
+
+.mode-card *{
+    position:relative;
+    z-index:2;
+}
+
+.survival{
+    background:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.35)),
+    url('https://images.steamusercontent.com/ugc/1787343763577788588/1A38C85A0D0AF63E6A760FCB89F8A27A8D6351AB/');
+    background-size:cover;
+    background-position:center;
+}
+
+.gens{
+    background:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.35)),
+    url('https://images7.alphacoders.com/632/632668.jpg');
+    background-size:cover;
+    background-position:center;
 }
 
 .mode-card h3{
-  font-size:1.8rem;
-  margin-bottom:18px;
+    font-size:2.3rem;
+    margin-bottom:18px;
 }
 
 .mode-card p{
-  color:#cfd8ff;
-  line-height:1.7;
+    line-height:1.9;
+    color:#f2e9ff;
 }
 
-/* REGLAS */
+/* RULES */
+
+.rules-grid{
+    display:grid;
+    gap:25px;
+}
 
 .rules-box{
-  max-width:900px;
-  margin:auto;
-}
-
-.rules-box details{
-  background:rgba(255,255,255,0.05);
-  border-radius:18px;
-  margin-bottom:20px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,.05);
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.08);
+    overflow:hidden;
 }
 
 .rules-box summary{
-  padding:22px;
-  cursor:pointer;
-  font-weight:700;
-  font-size:1.1rem;
+    padding:28px;
+    cursor:pointer;
+    font-size:1.2rem;
+    font-weight:800;
+    background:linear-gradient(to right,#ff4fd818,#8f4dff18);
 }
 
 .rules-content{
-  padding:0 22px 22px;
-  color:#d4ddff;
-  line-height:2;
+    padding:32px;
+    color:#efe6ff;
+    line-height:2.2;
 }
 
 /* CTA */
 
 .cta{
-  text-align:center;
-  background:linear-gradient(135deg,#00c3ff22,#a64dff22);
-  border:1px solid rgba(255,255,255,0.08);
-  width:90%;
-  max-width:1200px;
-  margin:0 auto 120px;
-  border-radius:30px;
-  padding:70px 30px;
+    width:92%;
+    max-width:1300px;
+    margin:0 auto 120px;
+    border-radius:35px;
+    overflow:hidden;
+    position:relative;
+    padding:90px 35px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.cta::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(rgba(9,4,17,.8),rgba(9,4,17,.9)),
+    url('https://images8.alphacoders.com/118/1186450.jpg');
+    background-size:cover;
+    background-position:center;
+    z-index:-1;
 }
 
 .cta h2{
-  font-size:3rem;
-  margin-bottom:20px;
+    font-size:3.5rem;
+    margin-bottom:20px;
+    font-weight:900;
 }
 
 .cta p{
-  color:#d2ddff;
-  margin-bottom:35px;
+    color:#f0e5ff;
+    margin-bottom:35px;
+    line-height:2;
+}
+
+.server-ip{
+    display:inline-block;
+    padding:20px 40px;
+    border-radius:18px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    font-size:2.3rem;
+    font-weight:900;
+    color:#ff7dea;
 }
 
 /* FOOTER */
 
 footer{
-  border-top:1px solid rgba(255,255,255,0.08);
-  padding:40px 20px;
-  text-align:center;
-  color:#aab7df;
-  background:#070a12;
+    padding:45px 20px;
+    text-align:center;
+    background:#07030d;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#bcaee6;
 }
-
-/* RESPONSIVE */
 
 @media(max-width:900px){
 
-  .navbar{
-    flex-direction:column;
-    gap:20px;
-  }
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
 
-  nav{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-  }
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
 
-  .hero h2{
-    font-size:2.8rem;
-  }
+    .hero h2{
+        font-size:3rem;
+    }
 
-  .hero img{
-    width:240px;
-  }
+    .hero img{
+        width:230px;
+    }
 
-  .section-title h2,
-  .cta h2{
-    font-size:2.2rem;
-  }
+    .section-title h2,
+    .cta h2{
+        font-size:2.3rem;
+    }
 
 }
 
@@ -400,230 +452,259 @@ footer{
 <body>
 
 <header>
-  <div class="navbar">
 
-    <div class="logo">
-      <!-- CAMBIA logo.png POR TU LOGO -->
-      <img src="logo.png" alt="Minewold Logo">
-      <h1>MINEWOLD</h1>
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="logo.png" alt="Minewold">
+            <h1>MINEWOLD</h1>
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#modos">Modalidades</a>
+            <a href="#reglas">Reglas</a>
+            <a href="#discord">Discord</a>
+            <a href="#tienda">Tienda</a>
+        </nav>
+
     </div>
 
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#modos">Modos</a>
-      <a href="#reglas">Reglas</a>
-      <a href="#discord">Discord</a>
-      <a href="#tienda">Tienda</a>
-    </nav>
-
-  </div>
 </header>
-
-<!-- HERO -->
 
 <section class="hero" id="inicio">
 
-  <div class="hero-content">
+    <div class="hero-content">
 
-    <!-- CAMBIA logo.png POR TU LOGO -->
-    <img src="logo.png" alt="Minewold">
+        <img src="logo.png" alt="Minewold">
 
-    <h2>
-      Bienvenido a <span>Minewold</span>
-    </h2>
+        <h2>
+            Bienvenido a <span>Minewold</span>
+        </h2>
 
-    <p>
-      El servidor de Minecraft donde la aventura nunca termina.
-      Eventos épicos, modos únicos, economía, PvP competitivo
-      y una comunidad activa todos los días.
-    </p>
+        <p>
+            Una network premium de Minecraft enfocada en Survival y Gens.
+            Vive una experiencia profesional con economía avanzada,
+            eventos semanales, rankings, PvP competitivo y una comunidad activa 24/7.
+        </p>
 
-    <div class="hero-buttons">
-      <a href="#discord" class="btn btn-primary">Entrar al servidor</a>
-      <a href="#tienda" class="btn btn-secondary">Ver tienda</a>
+        <div class="hero-buttons">
+            <a href="#discord" class="btn btn-primary">Jugar ahora</a>
+            <a href="#tienda" class="btn btn-secondary">Ver tienda</a>
+        </div>
+
     </div>
 
-  </div>
-
 </section>
-
-<!-- STATS -->
 
 <div class="stats">
 
-  <div class="stat-card">
-    <h3>+1200</h3>
-    <p>Jugadores registrados</p>
-  </div>
+    <div class="stat-card">
+        <h3>minewold.net</h3>
+        <p>IP oficial del servidor</p>
+    </div>
 
-  <div class="stat-card">
-    <h3>24/7</h3>
-    <p>Servidor online siempre</p>
-  </div>
+    <div class="stat-card">
+        <h3>24/7</h3>
+        <p>Servidor online</p>
+    </div>
 
-  <div class="stat-card">
-    <h3>+10</h3>
-    <p>Eventos semanales</p>
-  </div>
+    <div class="stat-card">
+        <h3>Survival</h3>
+        <p>Economía y clanes</p>
+    </div>
 
-  <div class="stat-card">
-    <h3>99%</h3>
-    <p>Anti-Lag optimizado</p>
-  </div>
+    <div class="stat-card">
+        <h3>Gens</h3>
+        <p>Competitivo y farmeo</p>
+    </div>
 
 </div>
-
-<!-- MODOS -->
 
 <section class="section" id="modos">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="section-title">
-      <h2>Modos de juego</h2>
-      <p>Experiencias únicas inspiradas en grandes networks.</p>
+        <div class="section-title">
+            <h2>Modalidades</h2>
+            <p>Explora las experiencias únicas de Minewold.</p>
+        </div>
+
+        <div class="modes">
+
+            <div class="mode-card survival">
+
+                <div>
+                    <h3>🌲 Survival</h3>
+
+                    <p>
+                        Explora un survival avanzado con economía, trabajos,
+                        sistema de clanes, protecciones, eventos, mercado y
+                        PvP competitivo inspirado en grandes servidores.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mode-card gens">
+
+                <div>
+                    <h3>💎 Gens</h3>
+
+                    <p>
+                        Consigue generadores, mejora tu isla y domina la economía.
+                        Compite en rankings, desbloquea mejoras y conviértete
+                        en el jugador más poderoso de Minewold.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="modes">
-
-      <div class="mode-card">
-        <h3>⚔ Survival</h3>
-        <p>
-          Sobrevive, construye y comercia con una economía avanzada,
-          sistema de clanes y eventos especiales.
-        </p>
-      </div>
-
-      <div class="mode-card">
-        <h3>🏆 PvP Arena</h3>
-        <p>
-          Demuestra tu habilidad en combates intensos,
-          rankings competitivos y recompensas exclusivas.
-        </p>
-      </div>
-
-      <div class="mode-card">
-        <h3>🌎 SkyBlock</h3>
-        <p>
-          Crea tu isla, mejora tus recursos y conviértete
-          en el jugador más poderoso de Minewold.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
 
 </section>
-
-<!-- REGLAS -->
 
 <section class="section" id="reglas">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="section-title">
-      <h2>Reglas del servidor</h2>
-      <p>Mantengamos una comunidad sana y divertida.</p>
-    </div>
-
-    <div class="rules-box">
-
-      <details>
-        <summary>📌 Reglas generales</summary>
-
-        <div class="rules-content">
-          • Respeta a todos los jugadores.<br>
-          • No hacks ni clientes ilegales.<br>
-          • No spam ni flood.<br>
-          • No aprovechar bugs o exploits.<br>
-          • Toxicidad excesiva = sanción.
+        <div class="section-title">
+            <h2>Reglas oficiales</h2>
+            <p>Inspiradas en networks grandes de Minecraft.</p>
         </div>
 
-      </details>
+        <div class="rules-grid">
 
-      <details>
-        <summary>⚔ Reglas PvP</summary>
+            <details class="rules-box">
 
-        <div class="rules-content">
-          • No teaming abusivo.<br>
-          • No auto-clickers.<br>
-          • Prohibido el uso de macros.
+                <summary>📜 Reglas Generales</summary>
+
+                <div class="rules-content">
+
+                    • Respeta a todos los jugadores y miembros del staff.<br>
+                    • Está prohibido el uso de hacks, cheats, xray, killaura, fly, reach o cualquier modificación ilegal.<br>
+                    • Prohibido utilizar autoclickers, macros o scripts externos.<br>
+                    • No spam, flood ni publicidad de otros servidores.<br>
+                    • No compartir enlaces maliciosos o contenido NSFW.<br>
+                    • Está prohibido discriminar o acosar a otros jugadores.<br>
+                    • No hacerse pasar por miembros del staff o administración.<br>
+                    • El abuso de bugs o glitches resultará en sanción severa.<br>
+                    • Cualquier intento de dañar el servidor terminará en blacklist permanente.<br>
+                    • No vender cuentas ni objetos por dinero real.<br>
+                    • El staff puede sancionar conductas tóxicas aunque no estén específicamente listadas.<br>
+                    • Mantén un lenguaje adecuado dentro del servidor y Discord.<br>
+                    • Está prohibido el doxeo o amenazas a otros usuarios.<br>
+                    • Las multicuentas usadas para ventajas ilegales serán sancionadas.<br>
+                    • Evadir sanciones usando otras cuentas resultará en blacklist.
+
+                </div>
+
+            </details>
+
+            <details class="rules-box">
+
+                <summary>🌲 Reglas Survival</summary>
+
+                <div class="rules-content">
+
+                    • No hacer griefing en construcciones protegidas.<br>
+                    • Está prohibido robar mediante glitches o exploits.<br>
+                    • No crear granjas lag-machine o mecanismos excesivos.<br>
+                    • El uso abusivo de aldeanos o redstone puede ser limitado por el staff.<br>
+                    • No estafar en trades importantes o ventas premium.<br>
+                    • Está prohibido almacenar ítems duplicados o ilegales.<br>
+                    • No realizar spawnkill constante a jugadores nuevos.<br>
+                    • Respeta los claims y terrenos de otros jugadores.<br>
+                    • No construir estructuras ofensivas o inapropiadas.<br>
+                    • Está prohibido abusar del PvP para arruinar experiencias repetidamente.<br>
+                    • No utilizar trampas invisibles o exploits ilegales en PvP.<br>
+                    • Las alianzas masivas abusivas pueden ser limitadas.<br>
+                    • El uso de clientes de minimapa con entidades está prohibido.<br>
+                    • Está prohibido usar TNT o mecanismos para generar lag intencional.<br>
+                    • No aprovechar errores económicos del survival.<br>
+                    • El staff puede remover construcciones que afecten el rendimiento del servidor.
+
+                </div>
+
+            </details>
+
+            <details class="rules-box">
+
+                <summary>💎 Reglas Gens</summary>
+
+                <div class="rules-content">
+
+                    • Prohibido duplicar generadores o cualquier ítem económico.<br>
+                    • No abusar de errores relacionados con dinero, upgrades o menús.<br>
+                    • Está prohibido usar autoclickers o macros AFK.<br>
+                    • No compartir cuentas para subir posiciones en rankings.<br>
+                    • Está prohibido boostear estadísticas con multicuentas.<br>
+                    • No crear sistemas AFK ilegales para generar recursos infinitos.<br>
+                    • El abuso de bugs de economía resultará en wipe de balance.<br>
+                    • Está prohibido modificar clientes para automatizar acciones.<br>
+                    • No estafar en compras de generadores o upgrades.<br>
+                    • Los generadores ilegales serán eliminados automáticamente.<br>
+                    • No causar lag con sistemas automáticos excesivos.<br>
+                    • Las granjas abusivas podrán ser eliminadas por el staff.<br>
+                    • Está prohibido vender recursos obtenidos ilegalmente.<br>
+                    • No aprovechar errores visuales o glitches de trade.<br>
+                    • El uso de VPN para evadir sanciones será motivo de blacklist.<br>
+                    • Las decisiones administrativas relacionadas con economía son finales.
+
+                </div>
+
+            </details>
+
         </div>
 
-      </details>
-
     </div>
-
-  </div>
 
 </section>
 
-<!-- CTA -->
-
 <div class="cta" id="discord">
 
-  <h2>Únete a la comunidad</h2>
+    <h2>Conéctate ahora</h2>
 
-  <p>
-    Entra al Discord oficial de Minewold y juega con cientos de jugadores.
-  </p>
+    <p>
+        Únete a Minewold y empieza tu aventura en la network.
+    </p>
 
-  <a href="https://discord.gg/tu-invite" target="_blank" class="btn btn-primary">
-    Entrar al Discord
-  </a>
+    <div class="server-ip">
+        minewold.net
+    </div>
+
+    <br><br><br>
+
+    <a href="https://discord.gg/tu-invite" target="_blank" class="btn btn-primary">
+        Entrar al Discord
+    </a>
 
 </div>
 
-<!-- TIENDA -->
-
 <section class="section" id="tienda">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="section-title">
-      <h2>Tienda oficial</h2>
-      <p>Compra rangos, cosméticos y ventajas exclusivas.</p>
+        <div class="section-title">
+            <h2>Tienda Oficial</h2>
+            <p>Compra rangos, cosméticos y ventajas exclusivas.</p>
+        </div>
+
+        <div style="text-align:center;">
+            <a href="https://tienda.minewold.net" target="_blank" class="btn btn-primary">
+                Ir a la tienda
+            </a>
+        </div>
+
     </div>
-
-    <div style="text-align:center;">
-      <a href="https://tienda.minewold.net" target="_blank" class="btn btn-primary">
-        Ir a la tienda
-      </a>
-    </div>
-
-  </div>
 
 </section>
 
 <footer>
-  © 2025 Minewold Network — Todos los derechos reservados.
+    © 2026 Minewold Network — Todos los derechos reservados.
 </footer>
 
 </body>
 </html>
-```
-
-## Cómo poner el logo
-
-1. Guarda tu logo como:
-
-```bash
-logo.png
-```
-
-2. Pon el archivo dentro de la misma carpeta del HTML.
-
-3. Abre el HTML y automáticamente aparecerá.
-
-## Resultado
-
-✔ Diseño moderno estilo Hypixel
-✔ Navbar transparente premium
-✔ Efectos glassmorphism
-✔ Animaciones suaves
-✔ Responsive para móvil
-✔ Hero profesional
-✔ Cards modernas
-✔ Secciones premium
-✔ Mucho más visual y competitivo
